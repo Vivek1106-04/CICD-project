@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    image: ${DOCKERHUB_USERNAME:-local}/2023bcs0175_backend
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ./frontend
+    image: ${DOCKERHUB_USERNAME:-local}/2023bcs0175_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
