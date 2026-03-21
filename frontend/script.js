@@ -1,5 +1,5 @@
 // Change 'localhost' to your GCP Public IP during the final deployment phase
-const API_URL = 'http://127.0.0.1:5001/student-details';
+const API_URL = 'http://34.93.145.163:5001/student-details';
 
 fetch(API_URL)
     .then(response => response.json())
