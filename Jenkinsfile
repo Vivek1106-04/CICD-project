@@ -18,11 +18,11 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 script {
-                    echo "Building Frontend Image..."
-                    sh "docker build -t ${DOCKERHUB_USERNAME}/${ROLL_NUMBER}_frontend ./frontend"
+                    echo "Building Frontend Image for AMD64..."
+                    sh "docker build --platform linux/amd64 -t ${DOCKERHUB_USERNAME}/${ROLL_NUMBER}_frontend ./frontend"
                     
-                    echo "Building Backend Image..."
-                    sh "docker build -t ${DOCKERHUB_USERNAME}/${ROLL_NUMBER}_backend ./backend"
+                    echo "Building Backend Image for AMD64..."
+                    sh "docker build --platform linux/amd64 -t ${DOCKERHUB_USERNAME}/${ROLL_NUMBER}_backend ./backend"
                 }
             }
         }
